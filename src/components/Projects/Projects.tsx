@@ -1,7 +1,7 @@
 export default function Projects() {
     return (
-        <section className="h-screen">
-            <h1>Projects</h1>
+        <section id="projects" className="h-screen bg-white">
+            <h1 className="text-black">Projects</h1>
         </section>
     )
 }

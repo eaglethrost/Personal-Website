@@ -1,7 +1,7 @@
 export default function Experience() {
     return (
-        <section className="h-section">
-            <h1>Experience</h1>
+        <section id="experience" className="h-section bg-white">
+            <h1 className="text-black">Experience</h1>
         </section>
     )
 }
