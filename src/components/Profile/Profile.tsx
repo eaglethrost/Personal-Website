@@ -1,6 +1,5 @@
 import Image from "next/image"
-import MyFace from "@/assets/my-face.svg"
-
+import MyFace from "@/assets/my-face.jpg"
 
 export default function Profile() {
     return (
@@ -10,10 +9,10 @@ export default function Profile() {
                     <Image
                         src={MyFace}
                         alt="My Face"
-                        className="lg:w-96 lg:h-96 w-56 h-56 lg:mt-0 mt-auto rounded-full"
+                        className="lg:w-96 lg:h-80 w-56 h-48 lg:mt-0 mt-auto rounded-full"
                     />
                 </div>
-                <div id="about-container" className="basis-3/5 lg:pl-10 relative flex flex-col lg:items-start items-center text-black">
+                <div id="about-container" className="basis-3/5 lg:pl-10 pt-2 relative flex flex-col lg:items-start items-center text-black">
                     <div className="lg:h-2/5 flex pb-5"><span className="lg:mt-auto -ml-1 pl-[-10px] text-7xl font-bold">Hi I'm Dimas!</span></div>
                     <span className="about-desc lg:text-start text-center">I’m an aspiring software engineer currently studying my masters at UNSW</span>
                     <span className="about-desc lg:text-start text-center">I aim to create high quality code and software which brings value to users</span>
