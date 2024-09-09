@@ -11,7 +11,7 @@ export default function Navbar() {
     };
 
     return (
-        <div id="navbar-container" className="h-[85px] w-screen bg-black flex fixed">
+        <div id="navbar-container" className="h-[85px] w-screen bg-black flex fixed z-50">
             <div id="name-container" className="h-full lg:w-1/4 md:w-[35%] w-4/5 flex items-center justify-start">
                 <h1 className="text-white relative left-5 text-2xl font-bold">Dimas Anugerah</h1>
             </div>

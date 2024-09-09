@@ -25,3 +25,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.about-desc {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #171717;
+  width: 70%;
+  margin: 1rem 0;
+}
