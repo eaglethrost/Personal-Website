@@ -14,6 +14,12 @@ const config: Config = {
       },
       height: {
         'section': '832px'
+      },
+      fontSize: {
+        'header': '60px'
+      },
+      padding: {
+        'start': '2rem'
       }
     },
   },

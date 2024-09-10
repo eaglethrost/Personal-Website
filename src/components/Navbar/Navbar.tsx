@@ -15,7 +15,7 @@ export default function Navbar() {
             <div id="name-container" className="h-full lg:w-1/4 md:w-[35%] w-4/5 flex items-center justify-start">
                 <h1 className="text-white relative left-5 text-2xl font-bold">Dimas Anugerah</h1>
             </div>
-            <div id="links-container" className="h-full w-1/2 hidden md:flex items-center justify-between">
+            <div id="links-container" className="h-full w-1/2 hidden md:flex items-center justify-between text-white">
                 <Link href={"#profile"} className="hover:text-blue-500">About</Link>
                 <Link href={"#experience"} className="hover:text-blue-500">Experience</Link>
                 <Link href={"#skills"} className="hover:text-blue-500">Skills</Link>
