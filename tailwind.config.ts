@@ -20,6 +20,21 @@ const config: Config = {
       },
       padding: {
         'start': '2rem'
+      },
+      keyframes: {
+        "fade-in-down": {
+            "0%": {
+                opacity: '0',
+                transform: "translate3d(0, -100%, 0)",
+            },
+            "100%": {
+                opacity: '1',
+                transform: "translate3d(0, 0, 0)",
+            },
+        }
+      },
+      animation: {
+        fadeInDown: 'fade-in-down 1s ease-in 0.25s 1'
       }
     },
   },
