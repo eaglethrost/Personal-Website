@@ -16,15 +16,15 @@ export default function Contact() {
                 <div id="contact-details" className="h-4/5 py-5 flex flex-col justify-evenly">
                     <div className="ml-10 flex items-center text-2xl">
                         <MdEmail className="w-12 h-12 mr-3"/>
-                        <a href="mailto:dimazanugrah12@gmail.com" target="_blank" rel="noopener noreferrer">dimazanugrah12@gmail.com</a>
+                        <a href="mailto:dimazanugrah12@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:underline">dimazanugrah12@gmail.com</a>
                     </div>
                     <div className="ml-10 flex items-center text-2xl">
                         <FaGithub className="w-12 h-12 mr-3"/>
-                        <a href="https://github.com/eaglethrost" target="_blank" rel="noopener noreferrer">eaglethrost</a>
+                        <a href="https://github.com/eaglethrost" target="_blank" rel="noopener noreferrer" className="hover:underline">eaglethrost</a>
                     </div>
                     <div className="ml-10 flex items-center text-2xl">
                         <FaLinkedin className="w-12 h-12 mr-3"/>
-                        <a href="https://www.linkedin.com/in/dimasputraanugerah/" target="_blank" rel="noopener noreferrer">Dimas Putra Anugerah</a>
+                        <a href="https://www.linkedin.com/in/dimasputraanugerah/" target="_blank" rel="noopener noreferrer" className="hover:underline">Dimas Putra Anugerah</a>
                     </div>
                     <div className="ml-10 flex items-center text-2xl">
                         <FaLocationDot className="w-12 h-12 mr-3"/>
@@ -36,7 +36,6 @@ export default function Contact() {
                     <span className="ml-3">2024 Dimas Putra Anugerah</span>
                 </div>
             </div>
-
         </section>
     )
 }
