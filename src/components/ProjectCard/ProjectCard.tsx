@@ -39,14 +39,13 @@ export default function ProjectCard({title, screenshot, tools, description, code
                 <h1 className="ml-3 mt-1.5 font-bold text-3xl">{title}</h1>
             </div>
             <div id="screenshot-container" className="h-60 w-full overflow-hidden">
-                <a href={websiteURL} target="_blank" rel="noopener noreferrer">
-                    <Image
-                        src={screenshot}
-                        alt="sigma"
-                        width={450}
-                        height={190}
-                    />
-                </a>
+                <Image
+                    src={screenshot}
+                    alt="sigma"
+                    width={450}
+                    height={190}
+                    className="w-full"
+                />
             </div>
             <div id="tools-container" className="h-1/10 my-2 text-center font-bold text-lg">{tools}</div>
             <div id="description-container" className="h-3/10 text-center mx-2">{description}</div>
