@@ -15,6 +15,9 @@ const config: Config = {
       height: {
         'section': '832px'
       },
+      minHeight: {
+        'section': '832px'
+      },
       fontSize: {
         'header': '60px'
       },

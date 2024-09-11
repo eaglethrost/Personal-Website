@@ -34,7 +34,7 @@ export default function ProjectCard({title, screenshot, tools, description, code
     : ProjectCardProps
 ) {
     return (
-        <div id="project-container" className="w-[450px] h-[520px] flex flex-col items-center rounded-xl border-2 border-slate-300 text-black shadow-[3px_3px_3px_gray]">
+        <div id="project-container" className="sm:w-[450px] w-5/6 h-[520px] flex flex-col items-center rounded-xl border-2 border-slate-300 text-black shadow-[3px_3px_3px_gray]">
             <div id="title-container" className="h-20 w-full">
                 <h1 className="ml-3 mt-1.5 font-bold text-3xl">{title}</h1>
             </div>

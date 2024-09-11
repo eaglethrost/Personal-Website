@@ -8,7 +8,7 @@ export default function ExperienceCard({companyLogo, jobTitle, technologies}
     }
 ) {
     return (
-        <div id="exp-container" className="w-[500px] h-68 flex flex-col items-center">
+        <div id="exp-container" className="w-[550px] h-68 flex flex-col items-center">
             <div className="h-52 w-full flex items-center justify-center">
                 <Image
                     src={companyLogo}

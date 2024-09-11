@@ -7,7 +7,7 @@ export default function Experience() {
     return (
         <section id="experience" className="bg-white pb-10 text-black min-h-[850px]">
             <h1 className="relative section-header pb-6">I've previously worked as a...</h1>
-            <div id="exps-container" className="flex flex-row flex-wrap justify-evenly gap-8">
+            <div id="exps-container" className="flex flex-row flex-wrap justify-evenly text-center gap-8">
                 <ExperienceCard
                     companyLogo={AimlLogo}
                     jobTitle="Research Intern"
