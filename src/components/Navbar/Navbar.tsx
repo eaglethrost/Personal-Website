@@ -27,7 +27,7 @@ export default function Navbar() {
                 <Link href={"#blog"} className="hover:text-blue-500">Blog</Link>
             </div>
             <div id="resume-container" className="h-full w-1/4 flex items-center justify-center hidden md:flex">
-                <button onClick={openPDF} className="text-white relative left-5 p-2.5 px-6 rounded-full bg-[#3650F5] hover:bg-blue-700">Resume</button>
+                <a href="/Dimas_Resume.pdf" className="text-white relative left-5 p-2.5 px-6 rounded-full bg-[#3650F5] hover:bg-blue-700">Resume</a>
             </div>
 
             {/* Mobile Navbar */}
@@ -47,7 +47,7 @@ export default function Navbar() {
                     <Link href="#projects" onClick={toggleMenu} className="hover:text-blue-500">Projects</Link>
                     <Link href="#contact" onClick={toggleMenu} className="hover:text-blue-500">Contact</Link>
                     <Link href="#blog" onClick={toggleMenu} className="hover:text-blue-500">Blog</Link>
-                    <button onClick={openPDF} className="text-white p-2.5 px-6 rounded-full bg-[#3650F5] hover:bg-blue-700">Resume</button>
+                    <a href="/Dimas_Resume.pdf" className="text-white p-2.5 px-6 rounded-full bg-[#3650F5] hover:bg-blue-700">Resume</a>
                 </div>
             )}
         </div>
