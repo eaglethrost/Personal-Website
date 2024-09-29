@@ -16,7 +16,7 @@ const config: Config = {
         'section': '832px'
       },
       minHeight: {
-        'section': '832px'
+        'section': '100vh'
       },
       fontSize: {
         'header': '60px'
@@ -28,16 +28,18 @@ const config: Config = {
         "fade-in-down": {
             "0%": {
                 opacity: '0',
-                transform: "translate3d(0, -100%, 0)",
+                transform: "translateY(-50%)",
             },
             "100%": {
                 opacity: '1',
-                transform: "translate3d(0, 0, 0)",
+                transform: "translateY(0)",
             },
         }
       },
       animation: {
-        fadeInDown: 'fade-in-down 1s ease-in 0.25s 1'
+        fadeInDown: 'fade-in-down 0.6s ease-in 0s 1',
+        fadeInDown2: 'fade-in-down 0.6s ease-in 0.6s 1',
+        fadeInDown3: 'fade-in-down 0.6s ease-in 1.2s 1'
       }
     },
   },
