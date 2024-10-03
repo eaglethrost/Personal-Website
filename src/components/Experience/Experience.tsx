@@ -3,11 +3,23 @@ import AimlLogo from "@/assets/aiml.jpg"
 import EqunixLogo from "@/assets/equnix.png"
 import MgpaLogo from "@/assets/mgpa.png"
 
-export default function Experience() {
+import { useEffect, useRef, useState } from 'react';
+
+export default function Experience({observer} : {
+    observer: IntersectionObserver;
+}) {
+    // Add animation to some elements
+    useEffect(() => {
+        const header = document.querySelector("#exps-intro");
+        const experiences = document.querySelector("#exps-container");
+        observer.observe(header!);
+        observer.observe(experiences!);
+    }, []);
+
     return (
-        <section id="experience" className="bg-white pb-10 text-black min-h-[850px]">
-            <h1 className="relative section-header pb-6">I've previously worked as a...</h1>
-            <div id="exps-container" className="flex flex-row flex-wrap justify-evenly text-center gap-8">
+        <section id="experience" className="bg-white pb-10 text-black min-h-screen">
+            <h1 id="exps-intro" className="relative section-header pb-6">I've previously worked as a...</h1>
+            <div id="exps-container" className="mt-4 flex flex-row flex-wrap justify-evenly text-center gap-8">
                 <ExperienceCard
                     companyLogo={AimlLogo}
                     jobTitle="Research Intern"
