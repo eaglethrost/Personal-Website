@@ -17,14 +17,41 @@ import LinuxLogo from "@/assets/linux.png"
 import GitLogo from "@/assets/git.png"
 import RustLogo from "@/assets/rust.png"
 
+import { useEffect } from "react"
+
 export default function Skills() {
     const proficientLogos = [PythonLogo, CppLogo, GoLogo];
     const familiarLogos = [TsLogo, JsLogo, ReactLogo, NodeLogo, PostgresLogo, MongoLogo, 
                            LinuxLogo, DockerLogo, GitLogo, RustLogo, RLogo];
 
+    // add animation
+    useEffect(() => {
+        const skillsObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id == "skills-intro") {
+                            entry.target.classList.add('animate-fadeInLeft');
+                        } else if (entry.target.id == "techs-container") {
+                            entry.target.classList.add('animate-fadeInRight');
+                        }
+                        skillsObserver.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );  
+
+        const header = document.querySelector("#skills-intro");
+        const techs = document.querySelector("#techs-container");
+        skillsObserver.observe(header!);
+        skillsObserver.observe(techs!);
+        
+    }, []);
+
     return (
         <section id="skills" className="bg-white pb-10 min-h-section">
-            <h1 className="relative section-header pb-6">Technologies I've worked with...</h1>
+            <h1 id="skills-intro" className="relative section-header pb-6">Technologies I've worked with...</h1>
             <div id="techs-container" className="my-5 flex lg:flex-row flex-col">
                 <div id="proficient-container" className="basis-2/5 lg:mb-0 mb-10 flex flex-col">
                     <span className="w-full lg:pl-8 pb-8 lg:text-start text-center text-4xl font-bold text-black">Proficient</span>
