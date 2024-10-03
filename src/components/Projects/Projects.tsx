@@ -6,6 +6,8 @@ import PPIA from "@/assets/ppiawebsite.png"
 import Outdoor from "@/assets/outdoor.png"
 import Terminal from "@/assets/terminal.png"
 
+import { useEffect } from "react"
+
 export default function Projects() {
     const unilectives: ProjectCardProps = {
         title: "Unilectives",
@@ -44,9 +46,34 @@ export default function Projects() {
         codeLink: "https://github.com/eaglethrost/Classroom-Reservation"
     };    
 
+    // add animation
+    useEffect(() => {
+        const skillsObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id == "projects-intro") {
+                            entry.target.classList.add('animate-fadeInLeft');
+                        } else if (entry.target.id == "projects-container") {
+                            entry.target.classList.add('animate-fadeInUp');
+                        }
+                        skillsObserver.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            },
+            {}
+        );  
+
+        const header = document.querySelector("#projects-intro");
+        const techs = document.querySelector("#projects-container");
+        skillsObserver.observe(header!);
+        skillsObserver.observe(techs!);
+        
+    }, []);
+
     return (
         <section id="projects" className="pb-10 bg-white">
-           <h1 className="relative section-header pb-6">My projects...</h1>
+           <h1 id="projects-intro" className="relative section-header pb-6">My projects...</h1>
            <div id="projects-container" className="flex flex-row flex-wrap justify-evenly gap-12">
                 <ProjectCard {...unilectives}/>
                 <ProjectCard {...einvoice}/>

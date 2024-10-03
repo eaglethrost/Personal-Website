@@ -16,7 +16,7 @@ export default function Experience() {
                         if (entry.target.id == "exps-intro") {
                             entry.target.classList.add('animate-fadeInLeft');
                         } else if (entry.target.id == "exps-container") {
-                            entry.target.classList.add('animate-fadeInRight');
+                            entry.target.classList.add('animate-fadeInUp');
                         }
                         experienceObserver.unobserve(entry.target); // Stop observing once animated
                     }
@@ -29,7 +29,7 @@ export default function Experience() {
         const experiences = document.querySelector("#exps-container");
         experienceObserver.observe(header!);
         experienceObserver.observe(experiences!);
-        
+
     }, []);
 
 

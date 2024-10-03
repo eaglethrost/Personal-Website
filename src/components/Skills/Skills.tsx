@@ -33,13 +33,13 @@ export default function Skills() {
                         if (entry.target.id == "skills-intro") {
                             entry.target.classList.add('animate-fadeInLeft');
                         } else if (entry.target.id == "techs-container") {
-                            entry.target.classList.add('animate-fadeInRight');
+                            entry.target.classList.add('animate-fadeInUp');
                         }
                         skillsObserver.unobserve(entry.target); // Stop observing once animated
                     }
                 });
             },
-            { threshold: 0.1 }
+            {}
         );  
 
         const header = document.querySelector("#skills-intro");

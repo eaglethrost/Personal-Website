@@ -2,12 +2,36 @@ import { FaGithub, FaLinkedin, FaCopyright } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
+import { useEffect } from "react";
+
 export default function Contact() {
+
+    // add animation
+    useEffect(() => {
+        const skillsObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id == "contact-inv") {
+                            entry.target.classList.add('animate-fadeInLeft');
+                        }
+                        skillsObserver.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            },
+            {}
+        );  
+
+        const header = document.querySelector("#contact-inv");
+        skillsObserver.observe(header!);
+        
+    }, []);
+    
     return (
         <section id="contact" className="h-section bg-[#EDEDED] flex flex-col">
             <h1 className="text-5xl sm:pl-6 pt-5 pb-6 sm:text-left text-center font-bold">Feel free to contact me!</h1>
             <div id="contact-desc" className="relative lg:w-3/5 w-full basis-1/3 flex text-3xl text-black">
-                <span className="px-10 mb-5 mt-3 sm:ml-8 lg:text-left text-center"> If you have any questions about my experience or interested in 
+                <span id="contact-inv" className="px-10 mb-5 mt-3 sm:ml-8 lg:text-left text-center"> If you have any questions about my experience or interested in 
                     a collaboration, contact me on any of my platforms. I am always
                     open to internships, job opportunities and projects!
                 </span>

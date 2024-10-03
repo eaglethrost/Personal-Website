@@ -54,6 +54,16 @@ const config: Config = {
               opacity: '1',
               transform: "translateX(0)",
           }
+        },
+        "fade-in-up": {
+          "0%": {
+            opacity: '0',
+            transform: "translateY(20%)",
+          },
+          "100%": {
+              opacity: '1',
+              transform: "translateY(0)",
+          }
         }
       },
       animation: {
@@ -61,7 +71,8 @@ const config: Config = {
         fadeInDown2: 'fade-in-down 0.6s ease-in 0.6s 1',
         fadeInDown3: 'fade-in-down 0.6s ease-in 1.2s 1',
         fadeInLeft: 'fade-in-left 0.8s ease-in 0s 1',
-        fadeInRight: 'fade-in-right 0.8s ease-in 0s 1'
+        fadeInRight: 'fade-in-right 0.8s ease-in 0s 1',
+        fadeInUp: 'fade-in-up 0.8s ease-in 0s 1'
       }
     },
   },
