@@ -5,16 +5,33 @@ import MgpaLogo from "@/assets/mgpa.png"
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function Experience({observer} : {
-    observer: IntersectionObserver;
-}) {
-    // Add animation to some elements
+export default function Experience() {
+    // add animation to some elements
     useEffect(() => {
+        // create observer to observe if an element has entered viewport
+        const experienceObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id == "exps-intro") {
+                            entry.target.classList.add('animate-fadeInLeft');
+                        } else if (entry.target.id == "exps-container") {
+                            entry.target.classList.add('animate-fadeInRight');
+                        }
+                        experienceObserver.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );  
+
         const header = document.querySelector("#exps-intro");
         const experiences = document.querySelector("#exps-container");
-        observer.observe(header!);
-        observer.observe(experiences!);
+        experienceObserver.observe(header!);
+        experienceObserver.observe(experiences!);
+        
     }, []);
+
 
     return (
         <section id="experience" className="bg-white pb-10 text-black min-h-screen">
