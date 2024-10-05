@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'tall-screen': { 'raw': '(min-height: 1000px)' }
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

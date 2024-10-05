@@ -65,9 +65,9 @@ export default function Projects() {
         );  
 
         const header = document.querySelector("#projects-intro");
-        const techs = document.querySelector("#projects-container");
+        const projects = document.querySelector("#projects-container");
         skillsObserver.observe(header!);
-        skillsObserver.observe(techs!);
+        skillsObserver.observe(projects!);
         
     }, []);
 

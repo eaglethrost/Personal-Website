@@ -32,9 +32,8 @@ export default function Experience() {
 
     }, []);
 
-
     return (
-        <section id="experience" className="bg-white pb-10 text-black min-h-screen">
+        <section id="experience" className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10 text-black ">
             <h1 id="exps-intro" className="relative section-header pb-6">I've previously worked as a...</h1>
             <div id="exps-container" className="mt-4 flex flex-row flex-wrap justify-evenly text-center gap-8">
                 <ExperienceCard
