@@ -46,7 +46,7 @@ export default function Projects() {
         codeLink: "https://github.com/eaglethrost/Classroom-Reservation"
     };    
 
-    // add animation
+    // add animation to some elements when coming into view
     useEffect(() => {
         const skillsObserver = new IntersectionObserver(
             (entries) => {

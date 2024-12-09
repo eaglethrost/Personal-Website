@@ -24,7 +24,7 @@ export default function Skills() {
     const familiarLogos = [TsLogo, JsLogo, ReactLogo, NodeLogo, PostgresLogo, MongoLogo, 
                            LinuxLogo, DockerLogo, GitLogo, RustLogo, RLogo];
 
-    // add animation
+    // add animation to some elements when coming into view
     useEffect(() => {
         const skillsObserver = new IntersectionObserver(
             (entries) => {
@@ -39,7 +39,7 @@ export default function Skills() {
                     }
                 });
             },
-            {}
+            { threshold: 0.1 }
         );  
 
         const header = document.querySelector("#skills-intro");

@@ -3,7 +3,7 @@ import MyFace from "@/assets/my-face.jpg"
 
 export default function Profile() {
     return (
-        <section id="profile" className="min-h-screen tall-screen:min-h-[80vh] flex lg:flex-row flex-col bg-[#EDEDED]">
+        <section id="profile" className="min-h-screen tall-screen:min-h-[80vh] flex lg:flex-row flex-col justify-center bg-[#EDEDED]">
             <div id="face-container" className="basis-2/5 lg:mt-0 mt-28 relative flex lg:items-center lg:justify-end justify-center">
                 <Image
                     src={MyFace}
