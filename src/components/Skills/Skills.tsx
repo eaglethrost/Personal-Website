@@ -17,37 +17,10 @@ import LinuxLogo from "@/assets/linux.png"
 import GitLogo from "@/assets/git.png"
 import RustLogo from "@/assets/rust.png"
 
-import { useEffect } from "react"
-
 export default function Skills() {
     const proficientLogos = [PythonLogo, CppLogo, GoLogo];
     const familiarLogos = [TsLogo, JsLogo, ReactLogo, NodeLogo, PostgresLogo, MongoLogo, 
                            LinuxLogo, DockerLogo, GitLogo, RustLogo, RLogo];
-
-    // add animation to some elements when coming into view
-    useEffect(() => {
-        const skillsObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.id == "skills-intro") {
-                            entry.target.classList.add('animate-fadeInLeft');
-                        } else if (entry.target.id == "techs-container") {
-                            entry.target.classList.add('animate-fadeInUp');
-                        }
-                        skillsObserver.unobserve(entry.target); // Stop observing once animated
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );  
-
-        const header = document.querySelector("#skills-intro");
-        const techs = document.querySelector("#techs-container");
-        skillsObserver.observe(header!);
-        skillsObserver.observe(techs!);
-        
-    }, []);
 
     return (
         <section id="skills" className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10">

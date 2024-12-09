@@ -6,8 +6,6 @@ import PPIA from "@/assets/ppiawebsite.png"
 import Outdoor from "@/assets/outdoor.png"
 import Terminal from "@/assets/terminal.png"
 
-import { useEffect } from "react"
-
 export default function Projects() {
     const unilectives: ProjectCardProps = {
         title: "Unilectives",
@@ -45,31 +43,6 @@ export default function Projects() {
         description: "A terminal-based classroom booking system in which users can see room availability, book rooms, and view their bookings",
         codeLink: "https://github.com/eaglethrost/Classroom-Reservation"
     };    
-
-    // add animation to some elements when coming into view
-    useEffect(() => {
-        const skillsObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.id == "projects-intro") {
-                            entry.target.classList.add('animate-fadeInLeft');
-                        } else if (entry.target.id == "projects-container") {
-                            entry.target.classList.add('animate-fadeInUp');
-                        }
-                        skillsObserver.unobserve(entry.target); // Stop observing once animated
-                    }
-                });
-            },
-            {}
-        );  
-
-        const header = document.querySelector("#projects-intro");
-        const projects = document.querySelector("#projects-container");
-        skillsObserver.observe(header!);
-        skillsObserver.observe(projects!);
-        
-    }, []);
 
     return (
         <section id="projects" className="pb-10 bg-white">

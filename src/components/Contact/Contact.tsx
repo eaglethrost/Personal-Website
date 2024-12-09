@@ -2,31 +2,7 @@ import { FaGithub, FaLinkedin, FaCopyright } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
-import { useEffect } from "react";
-
-export default function Contact() {
-
-    // add animation
-    useEffect(() => {
-        const skillsObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.id == "contact-inv") {
-                            entry.target.classList.add('animate-fadeInLeft');
-                        }
-                        skillsObserver.unobserve(entry.target); // Stop observing once animated
-                    }
-                });
-            },
-            {}
-        );  
-
-        const header = document.querySelector("#contact-inv");
-        skillsObserver.observe(header!);
-        
-    }, []);
-    
+export default function Contact() {    
     return (
         <section id="contact" className="h-section bg-[#EDEDED] flex flex-col">
             <h1 className="text-5xl sm:pl-6 pt-5 pb-6 sm:text-left text-center font-bold">Feel free to contact me!</h1>
