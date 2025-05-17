@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from "next/image"
 
-export default function ExperienceCard({companyLogo, jobTitle, technologies} 
+export default function ExperienceCard({companyLogo, jobTitle, technologies, scale = 1} 
     : {
         companyLogo: StaticImageData; 
         jobTitle: string;
         technologies: string;
+        scale?: number;
     }
 ) {
     return (
@@ -13,8 +14,8 @@ export default function ExperienceCard({companyLogo, jobTitle, technologies}
                 <Image
                     src={companyLogo}
                     alt="Generic Logo"
-                    width={200}
-                    height={200}
+                    width={200 * scale}
+                    height={200 * scale}
                 />
             </div>
             <span className="text-2xl font-bold">{jobTitle}</span>
