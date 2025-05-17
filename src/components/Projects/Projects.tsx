@@ -46,7 +46,7 @@ export default function Projects() {
 
     return (
         <section id="projects" className="pb-10 bg-white">
-           <h1 className="relative section-header pb-6">My projects...</h1>
+           <h1 id="projects-intro" className="relative section-header pb-6">My projects...</h1>
            <div id="projects-container" className="flex flex-row flex-wrap justify-evenly gap-12">
                 <ProjectCard {...unilectives}/>
                 <ProjectCard {...einvoice}/>

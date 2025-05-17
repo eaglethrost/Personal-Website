@@ -23,8 +23,8 @@ export default function Skills() {
                            LinuxLogo, DockerLogo, GitLogo, RustLogo, RLogo];
 
     return (
-        <section id="skills" className="bg-white pb-10 min-h-section">
-            <h1 className="relative section-header pb-6">Technologies I've worked with...</h1>
+        <section id="skills" className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10">
+            <h1 id="skills-intro" className="relative section-header pb-6">Technologies I've worked with...</h1>
             <div id="techs-container" className="my-5 flex lg:flex-row flex-col">
                 <div id="proficient-container" className="basis-2/5 lg:mb-0 mb-10 flex flex-col">
                     <span className="w-full lg:pl-8 pb-8 lg:text-start text-center text-4xl font-bold text-black">Proficient</span>
