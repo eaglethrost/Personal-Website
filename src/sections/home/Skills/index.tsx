@@ -15,6 +15,7 @@ import ReactLogo from "@/assets/react.png";
 import RLogo from "@/assets/rstudio.png";
 import RustLogo from "@/assets/rust.png";
 import TsLogo from "@/assets/typescript.svg";
+import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
 interface SkillsProps {
   title?: string;
@@ -43,15 +44,30 @@ export default function Skills({
   proficientTitle = "Proficient",
   familiarTitle = "Familiar",
 }: SkillsProps) {
+  const headerAnimation = useFadeInAnimation<HTMLHeadingElement>({
+    direction: "left",
+  });
+  const containerAnimation = useFadeInAnimation<HTMLDivElement>({
+    direction: "up",
+  });
+
   return (
     <section
       id="skills"
       className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10"
     >
-      <h1 id="skills-intro" className="relative section-header pb-6">
+      <h1
+        ref={headerAnimation.ref}
+        id="skills-intro"
+        className="relative section-header pb-6"
+      >
         {title}
       </h1>
-      <div id="techs-container" className="my-5 flex lg:flex-row flex-col">
+      <div
+        ref={containerAnimation.ref}
+        id="techs-container"
+        className="my-5 flex lg:flex-row flex-col"
+      >
         <div
           id="proficient-container"
           className="basis-2/5 lg:mb-0 mb-10 flex flex-col"

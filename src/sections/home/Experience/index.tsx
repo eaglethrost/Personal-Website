@@ -3,6 +3,7 @@ import AimlLogo from "@/assets/aiml.jpg";
 import EqunixLogo from "@/assets/equnix.png";
 import LyraLogo from "@/assets/lyra-logo.svg";
 import MgpaLogo from "@/assets/mgpa.png";
+import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 import ExperienceCard from "./Card";
 
 interface ExperienceItem {
@@ -47,15 +48,27 @@ export default function Experience({
 }: ExperienceProps = {}) {
   const experiencesToRender = experiences || defaultExperiences;
 
+  const headerAnimation = useFadeInAnimation<HTMLHeadingElement>({
+    direction: "left",
+  });
+  const containerAnimation = useFadeInAnimation<HTMLDivElement>({
+    direction: "up",
+  });
+
   return (
     <section
       id="experience"
       className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10 text-black "
     >
-      <h1 id="exps-intro" className="relative section-header pb-6">
+      <h1
+        ref={headerAnimation.ref}
+        id="exps-intro"
+        className="relative section-header pb-6"
+      >
         {title}
       </h1>
       <div
+        ref={containerAnimation.ref}
         id="exps-container"
         className="mt-4 flex flex-row flex-wrap justify-evenly text-center gap-8"
       >

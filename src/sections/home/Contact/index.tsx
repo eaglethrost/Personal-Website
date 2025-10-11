@@ -1,8 +1,13 @@
 import { FaCopyright, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
 export default function Contact() {
+  const contactInvAnimation = useFadeInAnimation<HTMLSpanElement>({
+    direction: "left",
+  });
+
   return (
     <section id="contact" className="h-section bg-[#EDEDED] flex flex-col">
       <h1 className="text-5xl sm:pl-6 pt-5 pb-6 sm:text-left text-center font-bold">
@@ -13,6 +18,7 @@ export default function Contact() {
         className="relative lg:w-3/5 w-full basis-1/3 flex text-3xl text-black"
       >
         <span
+          ref={contactInvAnimation.ref}
           id="contact-inv"
           className="px-10 mb-5 mt-3 sm:ml-8 lg:text-left text-center"
         >
