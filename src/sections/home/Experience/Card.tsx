@@ -1,16 +1,18 @@
 import Image, { type StaticImageData } from "next/image";
 
-export default function ExperienceCard({
-  companyLogo,
-  jobTitle,
-  technologies,
-  scale = 1,
-}: {
+interface CardProps {
   companyLogo: StaticImageData;
   jobTitle: string;
   technologies: string;
   scale?: number;
-}) {
+}
+
+export default function Card({
+  companyLogo,
+  jobTitle,
+  technologies,
+  scale = 1,
+}: CardProps) {
   return (
     <div
       id="exp-container"

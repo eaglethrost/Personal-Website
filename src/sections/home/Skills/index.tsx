@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import CppLogo from "@/assets/cplusplus.svg";
 import DockerLogo from "@/assets/docker.png";
 import GitLogo from "@/assets/git.png";
@@ -16,9 +16,18 @@ import RLogo from "@/assets/rstudio.png";
 import RustLogo from "@/assets/rust.png";
 import TsLogo from "@/assets/typescript.svg";
 
-export default function Skills() {
-  const proficientLogos = [PythonLogo, CppLogo, GoLogo];
-  const familiarLogos = [
+interface SkillsProps {
+  title?: string;
+  proficientLogos?: StaticImageData[];
+  familiarLogos?: StaticImageData[];
+  proficientTitle?: string;
+  familiarTitle?: string;
+}
+
+export default function Skills({
+  title = "Technologies I've worked with...",
+  proficientLogos = [PythonLogo, CppLogo, GoLogo],
+  familiarLogos = [
     TsLogo,
     JsLogo,
     ReactLogo,
@@ -30,15 +39,17 @@ export default function Skills() {
     GitLogo,
     RustLogo,
     RLogo,
-  ];
-
+  ],
+  proficientTitle = "Proficient",
+  familiarTitle = "Familiar",
+}: SkillsProps) {
   return (
     <section
       id="skills"
       className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10"
     >
       <h1 id="skills-intro" className="relative section-header pb-6">
-        Technologies I've worked with...
+        {title}
       </h1>
       <div id="techs-container" className="my-5 flex lg:flex-row flex-col">
         <div
@@ -46,7 +57,7 @@ export default function Skills() {
           className="basis-2/5 lg:mb-0 mb-10 flex flex-col"
         >
           <span className="w-full lg:pl-8 pb-8 lg:text-start text-center text-4xl font-bold text-black">
-            Proficient
+            {proficientTitle}
           </span>
           <div className="flex flex-wrap justify-evenly">
             {proficientLogos.map((logo, index) => {
@@ -67,7 +78,7 @@ export default function Skills() {
           className="lg:px-0 px-7 basis-3/5 flex flex-col"
         >
           <span className="w-full lg:pl-8 pb-8 lg:text-start text-center text-4xl font-bold text-black">
-            Familiar
+            {familiarTitle}
           </span>
           <div className="flex flex-wrap justify-evenly gap-10">
             {familiarLogos.map((logo, index) => {

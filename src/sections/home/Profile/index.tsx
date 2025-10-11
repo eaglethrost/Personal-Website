@@ -1,7 +1,22 @@
 import Image from "next/image";
 import MyFace from "@/assets/my-face.jpg";
 
-export default function Profile() {
+interface ProfileProps {
+  name?: string;
+  title?: string;
+  description?: string[];
+  interests?: string;
+}
+
+export default function Profile({
+  name = "Hi I'm Dimas!",
+  title = "I'm currently working as a forward deployed engineer building for the coolest startups!",
+  description = [
+    "I aim to create high quality code and software which brings value to users",
+    "My main interests lie in full-stack development, backend engineering, and data science",
+  ],
+  interests = "full-stack development, backend engineering, and data science",
+}: ProfileProps = {}) {
   return (
     <section
       id="profile"
@@ -23,21 +38,26 @@ export default function Profile() {
       >
         <div className="lg:h-2/5 flex pb-5 animate-fadeInDown2 anim-fm-back">
           <span className="lg:mt-auto -ml-1 pl-[-10px] text-center text-7xl font-bold">
-            Hi I'm Dimas!
+            {name}
           </span>
         </div>
         <span className="profile-about-desc lg:text-start text-center animate-fadeInDown3 anim-fm-back">
-          I’m currently working as a forward deployed engineer building for the
-          coolest startups!
+          {title}
         </span>
-        <span className="profile-about-desc lg:text-start text-center animate-fadeInDown3 anim-fm-back">
-          I aim to create high quality code and software which brings value to
-          users
-        </span>
-        <span className="profile-about-desc lg:text-start text-center animate-fadeInDown3 anim-fm-back">
-          My main interests lie in{" "}
-          <b>full-stack development, backend engineering, and data science</b>
-        </span>
+        {description.map((desc, index) => (
+          <span
+            key={index}
+            className="profile-about-desc lg:text-start text-center animate-fadeInDown3 anim-fm-back"
+          >
+            {desc.includes("interests") ? (
+              <>
+                My main interests lie in <b>{interests}</b>
+              </>
+            ) : (
+              desc
+            )}
+          </span>
+        ))}
       </div>
     </section>
   );

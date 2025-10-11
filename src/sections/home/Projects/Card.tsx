@@ -1,12 +1,11 @@
 import Image, { type StaticImageData } from "next/image";
 
-function CardFooter({
-  websiteURL,
-  codeLink,
-}: {
+interface CardFooterProps {
   websiteURL?: string;
   codeLink: string;
-}) {
+}
+
+function CardFooter({ websiteURL, codeLink }: CardFooterProps) {
   if (websiteURL) {
     return (
       <div
@@ -58,7 +57,7 @@ export interface ProjectCardProps {
   websiteURL?: string;
 }
 
-export default function ProjectCard({
+export default function Card({
   title,
   screenshot,
   tools,
