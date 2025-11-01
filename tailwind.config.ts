@@ -13,13 +13,16 @@ const config: Config = {
         "tall-screen": { raw: "(min-height: 1000px)" },
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        backgroundDark: "#090711",
+        backgroundLight: "#1a0f4b",
         navbar: "#2d2255",
       },
       height: {
-        navbar: "12vh",
+        navbar: "10vh",
         section: "832px",
+      },
+      width: {
+        content: "80%",
       },
       minHeight: {
         section: "100vh",

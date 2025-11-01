@@ -5,17 +5,15 @@ import { homePageSections } from "./sections";
 
 function DesktopNavbar() {
   return (
-    <div 
-      id="desktop-navbar-container" 
+    <div
+      id="desktop-navbar-container"
       className="w-4/5 h-navbar bg-navbar hidden md:flex rounded-3xl mt-8"
     >
       <div
         id="name-container"
-        className="h-full w-1/5 flex items-center justify-center pl-6"
+        className="h-full w-1/4 flex items-center justify-center pl-6"
       >
-        <h1 className="text-white text-2xl font-bold">
-          Dimas Anugerah
-        </h1>
+        <h1 className="text-white text-2xl font-bold">Dimas Anugerah</h1>
       </div>
       <div
         id="links-container"
@@ -48,7 +46,10 @@ function DesktopNavbar() {
 
 export default function Navbar() {
   return (
-    <section id="navbar" className="w-full h-navbar flex fixed items-center justify-center isolate z-[9999]">
+    <section
+      id="navbar"
+      className="w-full h-navbar flex fixed items-center justify-center isolate z-[9999]"
+    >
       <DesktopNavbar />
       <MobileNavbar />
     </section>

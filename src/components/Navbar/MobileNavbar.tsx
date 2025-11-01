@@ -11,8 +11,8 @@ export default function MobileNavbar() {
   };
 
   return (
-    <div 
-      id="mobile-navbar-container" 
+    <div
+      id="mobile-navbar-container"
       className="w-screen h-navbar bg-navbar flex md:hidden"
     >
       <div

@@ -1,64 +1,71 @@
 import Image from "next/image";
 import MyFace from "@/assets/my-face.jpg";
 
-interface ProfileProps {
-  name?: string;
-  title?: string;
-  description?: string[];
-  interests?: string;
+import BackgroundCircles from "./BackgroundCircles";
+import { BottomRightFrame, TopLeftFrame } from "./RectangleFrames";
+
+function ProfileContent() {
+  return (
+    <div className="flex flex-col justify-center w-full lg:w-3/5 order-2 lg:order-1">
+      <div className="relative w-full">
+        <TopLeftFrame />
+        <BottomRightFrame />
+
+        <div className="space-y-2 mx-8 my-6 text-center lg:text-left">
+          <h1 className="font-bold mt-16 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight">
+            Hi, my name is Dimas!
+          </h1>
+          <p className="font-bold text-2xl sm:text-3xl lg:text-4xl text-white">
+            Software Engineer
+          </p>
+          <div className="pt-4 font-normal text-base sm:text-lg lg:text-xl text-white space-y-2">
+            <p>{`I'm currently working as a forward deployed engineer to build & ship incredible products for startups!`}</p>
+            <p>
+              I am a passionate developer and always aim to create high
+              quality software
+            </p>
+            <p>
+              My main interests lie in full-stack, backend, and AI
+              engineering
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  )
 }
 
-export default function Profile({
-  name = "Hi I'm Dimas!",
-  title = "I'm currently working as a forward deployed engineer building for the coolest startups!",
-  description = [
-    "I aim to create high quality code and software which brings value to users",
-    "My main interests lie in full-stack development, backend engineering, and data science",
-  ],
-  interests = "full-stack development, backend engineering, and data science",
-}: ProfileProps = {}) {
+function ProfileImage() {
   return (
-    <section
-      id="profile"
-      className="min-h-screen tall-screen:min-h-[80vh] flex lg:flex-row flex-col justify-center bg-[#EDEDED]"
-    >
+    <div className="relative w-full lg:w-1/2 mt-[16vh] lg:mt-0 flex items-center justify-center lg:pl-4 order-1 lg:order-2">
       <div
-        id="face-container"
-        className="basis-2/5 lg:mt-0 mt-28 relative flex lg:items-center lg:justify-end justify-center"
+        className="relative w-full aspect-square max-w-[320px] lg:max-w-[380px] rounded-[67px] overflow-hidden"
+        data-name="My Face"
       >
         <Image
           src={MyFace}
           alt="My Face"
-          className="lg:w-96 lg:h-80 w-72 h-64 lg:mt-0 mt-auto rounded-full animate-fadeInDown"
+          className="object-cover w-full h-full"
+          fill
+          sizes="(max-width: 1024px) 320px, 380px"
         />
       </div>
-      <div
-        id="about-container"
-        className="basis-3/5 lg:pl-10 pt-2 relative flex flex-col lg:items-start items-center text-black"
-      >
-        <div className="lg:h-2/5 flex pb-5 animate-fadeInDown2 anim-fm-back">
-          <span className="lg:mt-auto -ml-1 pl-[-10px] text-center text-7xl font-bold">
-            {name}
-          </span>
-        </div>
-        <span className="profile-about-desc lg:text-start text-center animate-fadeInDown3 anim-fm-back">
-          {title}
-        </span>
-        {description.map((desc, index) => (
-          <span
-            key={index}
-            className="profile-about-desc lg:text-start text-center animate-fadeInDown3 anim-fm-back"
-          >
-            {desc.includes("interests") ? (
-              <>
-                My main interests lie in <b>{interests}</b>
-              </>
-            ) : (
-              desc
-            )}
-          </span>
-        ))}
+    </div>
+  )
+}
+
+export default function Profile() {
+  return (
+    <div
+      className="min-h-screen tall-screen:min-h-[80vh] bg-gradient-to-b from-backgroundDark w-full to-backgroundLight"
+      data-name="Intro Page"
+    >
+      <BackgroundCircles />
+      <div className="flex flex-col lg:flex-row justify-center min-h-screen w-content mx-auto pb-16 lg:pb-0">
+        <ProfileContent />
+        <ProfileImage />
       </div>
-    </section>
+    </div>
   );
 }
