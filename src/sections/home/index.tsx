@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/components/ui/Navbar";
+import Navbar from "@/components/Navbar";
 import Contact from "@/sections/home/Contact";
 import Experience from "@/sections/home/Experience";
 import Profile from "@/sections/home/Profile";

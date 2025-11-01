@@ -15,8 +15,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        navbar: "#2d2255",
       },
       height: {
+        navbar: "12vh",
         section: "832px",
       },
       minHeight: {
