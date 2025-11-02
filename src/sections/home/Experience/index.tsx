@@ -27,7 +27,7 @@ const currentExperiences: ExperienceProps[] = [
     bullets: [
       "Integrated cursor-like AI agent in their documentation platform",
       "Setup AI client and infrastructure",
-      "Implemented full-stackfeature to allow users to modify enums in their API docs",
+      "Implemented full-stack feature to allow users to modify enums in their API docs",
     ],
   },
   {

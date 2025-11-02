@@ -1,11 +1,10 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import CppLogo from "@/assets/cplusplus.svg";
 import DockerLogo from "@/assets/docker.png";
 import GitLogo from "@/assets/git.png";
 import GoLogo from "@/assets/golang.png";
-import JsLogo from "@/assets/javascript.svg";
 import LinuxLogo from "@/assets/linux.png";
 import MongoLogo from "@/assets/mongodb.png";
 import NodeLogo from "@/assets/nodejs.png";
@@ -17,33 +16,23 @@ import RustLogo from "@/assets/rust.png";
 import TsLogo from "@/assets/typescript.svg";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
-interface SkillsProps {
-  title?: string;
-  proficientLogos?: StaticImageData[];
-  familiarLogos?: StaticImageData[];
-  proficientTitle?: string;
-  familiarTitle?: string;
-}
+const logos = [
+  TsLogo,
+  PythonLogo,
+  ReactLogo,
+  PostgresLogo,
+  MongoLogo,
+  NodeLogo,
+  LinuxLogo,
+  DockerLogo,
+  GitLogo,
+  CppLogo,
+  GoLogo,
+  RustLogo,
+  RLogo,
+];
 
-export default function Skills({
-  title = "Technologies I've worked with...",
-  proficientLogos = [PythonLogo, CppLogo, GoLogo],
-  familiarLogos = [
-    TsLogo,
-    JsLogo,
-    ReactLogo,
-    NodeLogo,
-    PostgresLogo,
-    MongoLogo,
-    LinuxLogo,
-    DockerLogo,
-    GitLogo,
-    RustLogo,
-    RLogo,
-  ],
-  proficientTitle = "Proficient",
-  familiarTitle = "Familiar",
-}: SkillsProps) {
+export default function Skills() {
   const headerAnimation = useFadeInAnimation<HTMLHeadingElement>({
     direction: "left",
   });
@@ -54,61 +43,34 @@ export default function Skills({
   return (
     <section
       id="skills"
-      className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10"
+      className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundDark w-full to-backgroundLight py-6"
     >
-      <h1
-        ref={headerAnimation.ref}
-        id="skills-intro"
-        className="relative section-header pb-6"
-      >
-        {title}
-      </h1>
-      <div
-        ref={containerAnimation.ref}
-        id="techs-container"
-        className="my-5 flex lg:flex-row flex-col"
-      >
-        <div
-          id="proficient-container"
-          className="basis-2/5 lg:mb-0 mb-10 flex flex-col"
-        >
-          <span className="w-full lg:pl-8 pb-8 lg:text-start text-center text-4xl font-bold text-black">
-            {proficientTitle}
-          </span>
-          <div className="flex flex-wrap justify-evenly">
-            {proficientLogos.map((logo, index) => {
-              return (
-                <Image
-                  key={`proficient-${index}`}
-                  src={logo}
-                  alt="Language"
-                  width={120}
-                  height={120}
-                />
-              );
-            })}
+      <div className="w-content mx-auto">
+        <div ref={headerAnimation.ref} className="mb-16">
+          <div className="flex items-center gap-8 mb-4">
+            {/* Decorative Line */}
+            <div className="w-2 h-16 bg-[#302D97] rounded" />
+            <p className="font-bold text-[48px] text-white">My Skills</p>
           </div>
+          <p className="font-normal text-xl ml-8 text-white">
+            Technologies I've worked with
+          </p>
         </div>
         <div
-          id="familiar-container"
-          className="lg:px-0 px-7 basis-3/5 flex flex-col"
+          ref={containerAnimation.ref}
+          id="techs-container"
+          className="w-full my-5 p-8 grid grid-cols-2 md:grid-cols-4 justify-items-center items-center gap-x-4 gap-y-12 bg-white/10 rounded-3xl backdrop-blur-sm"
         >
-          <span className="w-full lg:pl-8 pb-8 lg:text-start text-center text-4xl font-bold text-black">
-            {familiarTitle}
-          </span>
-          <div className="flex flex-wrap justify-evenly gap-10">
-            {familiarLogos.map((logo, index) => {
-              return (
-                <Image
-                  key={`familiar-${index}`}
-                  src={logo}
-                  alt="Language"
-                  width={120}
-                  height={120}
-                />
-              );
-            })}
-          </div>
+          {logos.map((logo, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <Image
+                src={logo}
+                alt={`Tech logo ${index + 1}`}
+                width={100}
+                height={100}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
