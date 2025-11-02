@@ -3,6 +3,7 @@ import AnderaLogo from "@/assets/andera.svg";
 import LyraLogo from "@/assets/lyra-logo.svg";
 import ReadmeLogo from "@/assets/readme.svg";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 import ExperienceCard, { type ExperienceProps } from "./Card";
 
@@ -55,7 +56,7 @@ const currentExperiences: ExperienceProps[] = [
 ];
 
 export default function Experience() {
-  const headerAnimation = useFadeInAnimation<HTMLHeadingElement>({
+  const headerAnimation = useFadeInAnimation<HTMLDivElement>({
     direction: "left",
   });
   const containerAnimation = useFadeInAnimation<HTMLDivElement>({
@@ -68,17 +69,11 @@ export default function Experience() {
       className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundLight w-full to-backgroundDark py-6"
     >
       <div className="w-content mx-auto">
-        <div ref={headerAnimation.ref} className="mb-16">
-          <div className="flex items-center gap-8 mb-4">
-            {/* Decorative Line */}
-            <div className="w-2 h-16 bg-[#302D97] rounded" />
-            <p className="font-bold text-[48px] text-white">My Experience</p>
-          </div>
-          <p className="font-normal text-xl ml-8 text-white">
-            I've dabbled on a lot of areas to solve interesting problems & build
-            products
-          </p>
-        </div>
+        <SectionHeader
+          title="My Experience"
+          description="I've dabbled on a lot of areas to solve interesting problems & build products"
+          animation={headerAnimation}
+        />
 
         <div
           ref={containerAnimation.ref}

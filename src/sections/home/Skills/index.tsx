@@ -15,6 +15,7 @@ import RLogo from "@/assets/rstudio.png";
 import RustLogo from "@/assets/rust.png";
 import TsLogo from "@/assets/typescript.svg";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const logos = [
   TsLogo,
@@ -33,7 +34,7 @@ const logos = [
 ];
 
 export default function Skills() {
-  const headerAnimation = useFadeInAnimation<HTMLHeadingElement>({
+  const headerAnimation = useFadeInAnimation<HTMLDivElement>({
     direction: "left",
   });
   const containerAnimation = useFadeInAnimation<HTMLDivElement>({
@@ -46,16 +47,11 @@ export default function Skills() {
       className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundDark w-full to-backgroundLight py-6"
     >
       <div className="w-content mx-auto">
-        <div ref={headerAnimation.ref} className="mb-16">
-          <div className="flex items-center gap-8 mb-4">
-            {/* Decorative Line */}
-            <div className="w-2 h-16 bg-[#302D97] rounded" />
-            <p className="font-bold text-[48px] text-white">My Skills</p>
-          </div>
-          <p className="font-normal text-xl ml-8 text-white">
-            Technologies I've worked with
-          </p>
-        </div>
+        <SectionHeader
+          title="My Skills"
+          description="Technologies I've worked with"
+          animation={headerAnimation}
+        />
         <div
           ref={containerAnimation.ref}
           id="techs-container"
