@@ -2,8 +2,8 @@ import AimlLogo from "@/assets/aiml.jpg";
 import AnderaLogo from "@/assets/andera.svg";
 import LyraLogo from "@/assets/lyra-logo.svg";
 import ReadmeLogo from "@/assets/readme.svg";
-import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
 import ExperienceCard, { type ExperienceProps } from "./Card";
 

@@ -14,8 +14,8 @@ import ReactLogo from "@/assets/react.png";
 import RLogo from "@/assets/rstudio.png";
 import RustLogo from "@/assets/rust.png";
 import TsLogo from "@/assets/typescript.svg";
-import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
 const logos = [
   TsLogo,
