@@ -1,53 +1,60 @@
-import type { StaticImageData } from "next/image";
 import AimlLogo from "@/assets/aiml.jpg";
-import EqunixLogo from "@/assets/equnix.png";
+import AnderaLogo from "@/assets/andera.svg";
 import LyraLogo from "@/assets/lyra-logo.svg";
-import MgpaLogo from "@/assets/mgpa.png";
+import ReadmeLogo from "@/assets/readme.svg";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
-import ExperienceCard from "./Card";
 
-interface ExperienceItem {
-  companyLogo: StaticImageData;
-  jobTitle: string;
-  technologies: string;
-  scale?: number;
-}
+import ExperienceCard, { type ExperienceProps } from "./Card";
 
-const defaultExperiences: ExperienceItem[] = [
+const currentExperiences: ExperienceProps[] = [
   {
-    companyLogo: LyraLogo,
-    jobTitle: "Forward Deployed Engineer @ Lyra",
-    technologies: "Python, Typescript, Excel",
-    scale: 0.8,
+    logo: LyraLogo,
+    title: "Forward Deployed Engineer",
+    company: "Lyra",
+    dateRange: "Jan 2025 - Present",
+    skills: "Typescript, Next.js, PostgreSQL, TRPC",
+    bullets: [
+      "Deployed to 2 SF-based startups to help ship incredible products",
+      "Currently leading a team of 6 engineers on a client project (YC)",
+    ],
   },
   {
-    companyLogo: AimlLogo,
-    jobTitle: "Research Intern @ AIML",
-    technologies: "Python, NLP, Stanza, GPT, Prompt Engineering",
+    logo: ReadmeLogo,
+    title: "Software Engineer",
+    company: "Readme",
+    dateRange: "Jun 2025 - Present",
+    skills: "React, Typescript, MongoDB, AI Engineering",
+    bullets: [
+      "Integrated cursor-like AI agent in their documentation platform",
+      "Setup AI client and infrastructure",
+      "Implemented full-stackfeature to allow users to modify enums in their API docs",
+    ],
   },
   {
-    companyLogo: EqunixLogo,
-    jobTitle: "Software Engineer Intern @ Equnix",
-    technologies: "Go, Linux, R, PostgreSQL, SDLC, Networks",
+    logo: AnderaLogo,
+    title: "Software Engineer",
+    company: "Andera",
+    dateRange: "Feb 2025 - Jun 2025",
+    skills: "Python, MongoDB, Excel, AI engineering",
+    bullets: [
+      "Improved excel data parsing tools to manually process pivot tables, PDF files, and more",
+      "Created testing framework to validate excel data parsing tools",
+      "Enhanced evaluation framework to better evaluate AI agents",
+    ],
   },
   {
-    companyLogo: MgpaLogo,
-    jobTitle: "Data Science Intern @ MGPA",
-    technologies: "Python, MongoDB, Data Analysis",
+    logo: AimlLogo,
+    title: "Research Intern",
+    company: "AIML",
+    dateRange: "Mar 2023 - Jul 2023",
+    skills: "Python, NLP, GPT, Prompt Engineering",
+    bullets: [
+      "Vision & language reasoning research on improving a robot's ability to reason about its environment",
+    ],
   },
 ];
 
-interface ExperienceProps {
-  title?: string;
-  experiences?: ExperienceItem[];
-}
-
-export default function Experience({
-  title = "I'm working / previously worked as a...",
-  experiences,
-}: ExperienceProps = {}) {
-  const experiencesToRender = experiences || defaultExperiences;
-
+export default function Experience() {
   const headerAnimation = useFadeInAnimation<HTMLHeadingElement>({
     direction: "left",
   });
@@ -58,29 +65,29 @@ export default function Experience({
   return (
     <section
       id="experience"
-      className="min-h-screen tall-screen:min-h-[70vh] bg-white pb-10 text-black "
+      className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundLight w-full to-backgroundDark py-6"
     >
-      <h1
-        ref={headerAnimation.ref}
-        id="exps-intro"
-        className="relative section-header pb-6"
-      >
-        {title}
-      </h1>
-      <div
-        ref={containerAnimation.ref}
-        id="exps-container"
-        className="mt-4 flex flex-row flex-wrap justify-evenly text-center gap-8"
-      >
-        {experiencesToRender.map((experience, index) => (
-          <ExperienceCard
-            key={index}
-            companyLogo={experience.companyLogo}
-            jobTitle={experience.jobTitle}
-            technologies={experience.technologies}
-            scale={experience.scale}
-          />
-        ))}
+      <div className="w-content mx-auto">
+        <div ref={headerAnimation.ref} className="mb-16">
+          <div className="flex items-center gap-8 mb-4">
+            {/* Decorative Line */}
+            <div className="w-2 h-16 bg-[#302D97] rounded" />
+            <p className="font-bold text-[48px] text-white">My Experience</p>
+          </div>
+          <p className="font-normal text-xl ml-8 text-white">
+            I've dabbled on a lot of areas to solve interesting problems & build
+            products
+          </p>
+        </div>
+
+        <div
+          ref={containerAnimation.ref}
+          className="w-full mt-4 flex flex-row flex-wrap justify-evenly text-center gap-8"
+        >
+          {currentExperiences.map((experience, index) => (
+            <ExperienceCard key={index} {...experience} />
+          ))}
+        </div>
       </div>
     </section>
   );

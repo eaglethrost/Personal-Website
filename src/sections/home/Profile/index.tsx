@@ -21,19 +21,17 @@ function ProfileContent() {
           <div className="pt-4 font-normal text-base sm:text-lg lg:text-xl text-white space-y-2">
             <p>{`I'm currently working as a forward deployed engineer to build & ship incredible products for startups!`}</p>
             <p>
-              I am a passionate developer and always aim to create high
-              quality software
+              I am a passionate developer and always aim to create high quality
+              software
             </p>
             <p>
-              My main interests lie in full-stack, backend, and AI
-              engineering
+              My main interests lie in full-stack, backend, and AI engineering
             </p>
           </div>
         </div>
-        
       </div>
     </div>
-  )
+  );
 }
 
 function ProfileImage() {
@@ -52,7 +50,7 @@ function ProfileImage() {
         />
       </div>
     </div>
-  )
+  );
 }
 
 export default function Profile() {
