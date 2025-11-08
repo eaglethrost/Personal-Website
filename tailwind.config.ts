@@ -14,6 +14,7 @@ const config: Config = {
       },
       colors: {
         backgroundDark: "#090711",
+        backgroundMedium: "#120b2e",
         backgroundLight: "#1a0f4b",
         navbar: "#2d2255",
       },

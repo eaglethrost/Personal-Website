@@ -1,83 +1,89 @@
-import { FaCopyright, FaGithub, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
+import MyFace from "@/assets/my-face.jpg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
 export default function Contact() {
-  const contactInvAnimation = useFadeInAnimation<HTMLSpanElement>({
-    direction: "left",
-  });
-
   return (
-    <section id="contact" className="h-section bg-[#EDEDED] flex flex-col">
-      <h1 className="text-5xl sm:pl-6 pt-5 pb-6 sm:text-left text-center font-bold">
-        Feel free to contact me!
-      </h1>
-      <div
-        id="contact-desc"
-        className="relative lg:w-3/5 w-full basis-1/3 flex text-3xl text-black"
-      >
-        <span
-          ref={contactInvAnimation.ref}
-          id="contact-inv"
-          className="px-10 mb-5 mt-3 sm:ml-8 lg:text-left text-center"
-        >
-          {" "}
-          If you have any questions about my experience or interested in a
-          collaboration, contact me on any of my platforms. I am always open to
-          internships, job opportunities and projects!
-        </span>
-      </div>
-      <div id="contact-list" className="relative grow bg-[#939393] text-black">
-        <div
-          id="contact-details"
-          className="h-4/5 py-5 flex flex-col justify-evenly"
-        >
-          <div className="ml-10 flex items-center">
-            <MdEmail className="w-12 h-12 mr-3" />
-            <a
-              href="mailto:dimazanugrah12@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:text-2xl text-lg hover:underline"
-            >
-              dimazanugrah12@gmail.com
-            </a>
-          </div>
-          <div className="ml-10 flex items-center">
-            <FaGithub className="w-12 h-12 mr-3" />
-            <a
-              href="https://github.com/eaglethrost"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:text-2xl text-lg hover:underline"
-            >
-              eaglethrost
-            </a>
-          </div>
-          <div className="ml-10 flex items-center">
-            <FaLinkedin className="w-12 h-12 mr-3" />
-            <a
-              href="https://www.linkedin.com/in/dimasputraanugerah/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:text-2xl text-lg hover:underline"
-            >
-              Dimas Putra Anugerah
-            </a>
-          </div>
-          <div className="ml-10 flex items-center">
-            <FaLocationDot className="w-12 h-12 mr-3" />
-            <p className="sm:text-2xl text-lg">Sydney, Australia</p>
+    <section
+      id="contact"
+      className="min-h-[65vh] bg-gradient-to-b from-backgroundDark to-backgroundLight flex flex-col"
+      data-name="Contact Page"
+    >
+      <div className="mt-auto flex flex-col">
+        <div className="bg-backgroundMedium">
+          <div className="flex-1 flex flex-col lg:flex-row items-center justify-center w-content mx-auto gap-12 lg:gap-16 px-8 py-16">
+            {/* Left Column - Contact Message */}
+            <div className="flex flex-col space-y-6 lg:w-1/2">
+              <h1 className="text-5xl lg:text-6xl text-center lg:text-left font-bold text-white">
+                Let's Talk!
+              </h1>
+              <p className="text-xl lg:text-3xl text-center lg:text-left text-white leading-relaxed">
+                Get in contact with me if you're interested to work together and
+                build the coolest products!
+              </p>
+              <div className="flex items-center gap-3 justify-center lg:justify-start text-white">
+                <FaLocationDot className="w-6 h-6" />
+                <span className="text-lg lg:text-xl">Sydney, Australia</span>
+              </div>
+            </div>
+
+            {/* Right Column - Profile Info */}
+            <div className="flex flex-col items-center lg:items-start lg:w-1/2 space-y-4">
+              <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-[67px] overflow-hidden">
+                <Image
+                  src={MyFace}
+                  alt="Dimas Putra Anugerah"
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 192px, 224px"
+                />
+              </div>
+              <div className="flex flex-col items-center lg:items-start space-y-2">
+                <h2 className="text-4xl lg:text-5xl font-bold text-white">
+                  Dimas Putra Anugerah
+                </h2>
+                <p className="text-xl lg:text-2xl text-white">Software Engineer</p>
+                <div className="flex items-center gap-4 mt-4">
+                  <a
+                    href="mailto:dimazanugrah12@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-blue-400 transition-colors"
+                    aria-label="Email"
+                  >
+                    <MdEmail className="w-8 h-8" />
+                  </a>
+                  <a
+                    href="https://github.com/eaglethrost"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-blue-400 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <FaGithub className="w-8 h-8" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dimasputraanugerah/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-blue-400 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin className="w-8 h-8" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          id="footer"
-          className="h-1/5 flex items-center justify-center bg-black text-white"
-        >
-          <FaCopyright className="mb-0.5" />
-          <span className="ml-3">2024 Dimas Putra Anugerah</span>
-        </div>
+        {/* Footer */}
+        <footer className="bg-[#070810] py-6 flex items-center justify-center">
+          <p className="text-white text-base lg:text-lg">
+            Copyright @ Dimas Putra Anugerah
+          </p>
+        </footer>
       </div>
     </section>
   );
