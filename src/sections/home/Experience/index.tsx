@@ -81,7 +81,7 @@ export default function Experience() {
 
       <div
         ref={containerAnimation.ref}
-        className="w-full pt-4 flex flex-row flex-wrap justify-evenly text-center gap-8"
+        className="w-full pt-4 flex flex-row flex-wrap justify-evenly text-center gap-8 opacity-0"
       >
         {currentExperiences.map((experience, index) => (
           <ExperienceCard key={index} {...experience} />

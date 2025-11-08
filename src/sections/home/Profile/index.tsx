@@ -12,13 +12,13 @@ function ProfileContent() {
         <BottomRightFrame />
 
         <div className="space-y-4 mx-8 my-6 text-center lg:text-left">
-          <h1 className="font-bold mt-16 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight">
+          <h1 className="font-bold mt-16 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight animate-fadeInDown">
             Hi, my name is Dimas!
           </h1>
-          <p className="font-bold text-2xl lg:text-4xl text-white">
+          <p className="font-bold text-2xl lg:text-4xl text-white animate-fadeInDown">
             Software Engineer
           </p>
-          <div className="pt-2 font-normal text-lg lg:text-2xl text-white space-y-4">
+          <div className="pt-2 font-normal text-lg lg:text-2xl text-white space-y-4 animate-fadeInDown">
             <p>{`I'm currently working as a forward deployed engineer to build & ship incredible products for startups!`}</p>
             <p>
               I am a passionate developer and always aim to create high quality
@@ -44,7 +44,7 @@ function ProfileImage() {
         <Image
           src={MyFace}
           alt="My Face"
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full animate-fadeInDown"
           fill
           sizes="(max-width: 1024px) 320px, 380px"
         />

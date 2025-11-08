@@ -101,7 +101,7 @@ export default function Projects() {
         animation={headerAnimation}
       />
       {/* Carousel Container */}
-      <div ref={containerAnimation.ref}>
+      <div ref={containerAnimation.ref} className="opacity-0">
         <div className="relative">
           {/* Left Arrow */}
           <button

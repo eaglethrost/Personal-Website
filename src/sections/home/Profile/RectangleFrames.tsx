@@ -1,7 +1,7 @@
 export function TopLeftFrame() {
   return (
     <div
-      className="absolute left-0 top-8 size-[100px] lg:size-[120px] z-20 hidden lg:block"
+      className="absolute left-0 top-8 size-[100px] lg:size-[120px] z-20 hidden lg:block animate-fadeInLeft"
       data-name="Top Left Frame"
     >
       <svg
@@ -38,7 +38,7 @@ export function TopLeftFrame() {
 export function BottomRightFrame() {
   return (
     <div
-      className="absolute right-0 bottom-0 size-[100px] lg:size-[120px] z-20 hidden lg:block"
+      className="absolute right-0 bottom-0 size-[100px] lg:size-[120px] z-20 hidden lg:block animate-fadeInRight"
       data-name="Bottom Right Frame"
     >
       <svg

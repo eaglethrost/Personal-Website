@@ -12,7 +12,7 @@ export default function SectionHeader({
   animation,
 }: SectionHeaderProps) {
   return (
-    <div ref={animation.ref} className="mb-16">
+    <div ref={animation.ref} className="mb-16 opacity-0">
       <div className="flex items-center gap-8 mb-4">
         {/* Decorative Line */}
         <div className="w-2 h-16 bg-[#302D97] rounded" />
