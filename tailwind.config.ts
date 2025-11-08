@@ -5,6 +5,8 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/hooks/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -12,11 +14,17 @@ const config: Config = {
         "tall-screen": { raw: "(min-height: 1000px)" },
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        backgroundDark: "#090711",
+        backgroundMedium: "#120b2e",
+        backgroundLight: "#1a0f4b",
+        navbar: "#2d2255",
       },
       height: {
+        navbar: "10vh",
         section: "832px",
+      },
+      width: {
+        content: "80%",
       },
       minHeight: {
         section: "100vh",
@@ -70,12 +78,12 @@ const config: Config = {
         },
       },
       animation: {
-        fadeInDown: "fade-in-down 0.6s ease-in 0s 1",
-        fadeInDown2: "fade-in-down 0.6s ease-in 0.6s 1",
-        fadeInDown3: "fade-in-down 0.6s ease-in 1.2s 1",
-        fadeInLeft: "fade-in-left 0.8s ease-in 0s 1",
-        fadeInRight: "fade-in-right 0.8s ease-in 0s 1",
-        fadeInUp: "fade-in-up 0.8s ease-in 0s 1",
+        fadeInDown: "fade-in-down 0.6s ease-in 0s 1 forwards",
+        fadeInDown2: "fade-in-down 0.6s ease-in 0.6s 1 forwards",
+        fadeInDown3: "fade-in-down 0.6s ease-in 1.2s 1 forwards",
+        fadeInLeft: "fade-in-left 0.8s ease-in 0s 1 forwards",
+        fadeInRight: "fade-in-right 0.8s ease-in 0s 1 forwards",
+        fadeInUp: "fade-in-up 0.8s ease-in 0s 1 forwards",
       },
     },
   },
