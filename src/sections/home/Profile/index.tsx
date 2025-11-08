@@ -11,14 +11,14 @@ function ProfileContent() {
         <TopLeftFrame />
         <BottomRightFrame />
 
-        <div className="space-y-2 mx-8 my-6 text-center lg:text-left">
+        <div className="space-y-4 mx-8 my-6 text-center lg:text-left">
           <h1 className="font-bold mt-16 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight">
             Hi, my name is Dimas!
           </h1>
-          <p className="font-bold text-2xl sm:text-3xl lg:text-4xl text-white">
+          <p className="font-bold text-2xl lg:text-4xl text-white">
             Software Engineer
           </p>
-          <div className="pt-4 font-normal text-base sm:text-lg lg:text-xl text-white space-y-2">
+          <div className="pt-2 font-normal text-lg lg:text-2xl text-white space-y-4">
             <p>{`I'm currently working as a forward deployed engineer to build & ship incredible products for startups!`}</p>
             <p>
               I am a passionate developer and always aim to create high quality

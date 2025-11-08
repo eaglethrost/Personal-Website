@@ -22,7 +22,7 @@ export default function ExperienceCard({
   return (
     <div
       className={`bg-transparent w-full px-4 sm:px-8 md:px-12 py-8 ${
-        isLast ? "border-y-[5px]" : "border-t-[5px]"
+        isLast ? "border-y-[2px]" : "border-t-[2px]"
       } border-white`}
     >
       {/* Header Section */}
@@ -34,34 +34,28 @@ export default function ExperienceCard({
           width={100}
           height={100}
         />
-
         <div className="flex-1 min-w-0">
           <p
-            className="font-bold text-[32px] text-white text-center md:text-left"
-            style={{ fontVariationSettings: "'wdth' 100" }}
+            className="font-bold text-3xl lg:text-4xl text-white text-center md:text-left"
           >
             {title} @ {company}
           </p>
           {skills && (
             <p
-              className="font-normal text-2xl text-white text-center md:text-left mt-0"
-              style={{ fontVariationSettings: "'wdth' 100" }}
+              className="font-normal text-lg lg:text-xl text-white text-center md:text-left mt-0"
             >
               {skills}
             </p>
           )}
         </div>
-
         <p
-          className="font-medium text-xl text-white text-center md:text-left shrink-0 self-center md:self-start"
-          style={{ fontVariationSettings: "'wdth' 100" }}
+          className="font-medium text-lg lg:text-xl text-white text-center md:text-left shrink-0 self-center md:self-start"
         >
           {dateRange}
         </p>
       </div>
-
       {/* Bullets */}
-      <ul className="font-normal text-xl text-white text-center md:text-left list-disc pl-8 md:pl-12">
+      <ul className="font-normal text-base lg:text-xl text-white text-center md:text-left list-disc pl-8 md:pl-12">
         {bullets.map((bullet, index) => (
           <li key={index}>{bullet}</li>
         ))}

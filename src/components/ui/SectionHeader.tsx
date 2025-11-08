@@ -16,9 +16,9 @@ export default function SectionHeader({
       <div className="flex items-center gap-8 mb-4">
         {/* Decorative Line */}
         <div className="w-2 h-16 bg-[#302D97] rounded" />
-        <p className="font-bold text-[48px] text-white">{title}</p>
+        <p className="font-bold text-5xl lg:text-6xl text-white">{title}</p>
       </div>
-      <p className="font-normal text-xl ml-8 text-white">{description}</p>
+      <p className="font-normal text-2xl ml-8 text-white">{description}</p>
     </div>
   );
 }

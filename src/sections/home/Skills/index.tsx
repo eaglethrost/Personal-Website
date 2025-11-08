@@ -55,7 +55,7 @@ export default function Skills() {
         <div
           ref={containerAnimation.ref}
           id="techs-container"
-          className="w-full my-5 p-8 grid grid-cols-2 md:grid-cols-4 justify-items-center items-center gap-x-4 gap-y-12 bg-white/10 rounded-3xl backdrop-blur-sm"
+          className="w-full my-5 p-8 grid grid-cols-2 md:grid-cols-4 justify-items-center items-center gap-x-2 gap-y-12 bg-white/10 rounded-3xl backdrop-blur-sm"
         >
           {logos.map((logo, index) => (
             <div key={index} className="flex items-center justify-center">

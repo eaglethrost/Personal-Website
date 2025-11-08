@@ -13,17 +13,17 @@ function DesktopNavbar() {
         id="name-container"
         className="h-full w-1/4 flex items-center justify-center pl-6"
       >
-        <h1 className="text-white text-2xl font-bold">Dimas Anugerah</h1>
+        <h1 className="text-white text-3xl font-bold">Dimas Anugerah</h1>
       </div>
       <div
         id="links-container"
-        className="h-full flex-1 hidden md:flex items-center justify-center text-white lg:gap-x-6 md:gap-x-3"
+        className="h-full flex-1 hidden md:flex items-center justify-center text-white lg:gap-x-8 md:gap-x-3"
       >
         {homePageSections.map((section) => (
           <Link
             key={section.name}
             href={section.href}
-            className="text-lg hover:text-blue-500 transition-colors"
+            className="text-xl hover:text-blue-500 transition-colors"
           >
             {section.name}
           </Link>
@@ -35,7 +35,7 @@ function DesktopNavbar() {
       >
         <a
           href="/Dimas_Resume.pdf"
-          className="text-white p-2.5 px-6 rounded-full bg-[#3650F5] hover:bg-blue-700 transition-colors"
+          className="text-xl text-white p-2.5 px-6 rounded-full bg-[#3650F5] hover:bg-blue-700 transition-colors"
         >
           Resume
         </a>

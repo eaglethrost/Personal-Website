@@ -39,7 +39,7 @@ export default function ProjectCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-['Roboto:Medium',sans-serif] font-medium leading-[40px] text-[32px] text-left text-nowrap text-white whitespace-pre"
+            className="font-['Roboto:Medium',sans-serif] font-medium leading-[40px] text-3xl lg:text-4xl text-left text-nowrap text-white whitespace-pre"
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             {title}
@@ -47,16 +47,16 @@ export default function ProjectCard({
         </div>
       ) : (
         <p
-          className="font-['Roboto:Medium',sans-serif] font-medium leading-[40px] text-[32px] text-left text-nowrap text-white mt-[24px] ml-[54px] whitespace-pre"
+          className="font-['Roboto:Medium',sans-serif] font-medium leading-[40px] text-3xl lg:text-4xl text-left text-nowrap text-white mt-[24px] ml-[54px] whitespace-pre"
           style={{ fontVariationSettings: "'wdth' 100" }}
         >
           {title}
         </p>
       )}
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.4] ml-[54px] not-italic text-[16px] text-white mt-[10px] w-[355px]">
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.4] ml-[54px] not-italic text-base lg:text-lg text-white mt-[10px] w-[355px]">
         {technologies}
       </p>
-      <p className="font-['Inter:Regular',sans-serif] font-normal h-[187px] leading-[1.2] ml-[54px] not-italic text-[#fefefe] text-[20px] mt-[15px] w-[355px]">
+      <p className="font-['Inter:Regular',sans-serif] font-normal h-[187px] leading-[1.2] ml-[54px] not-italic text-[#fefefe] text-lg lg:text-xl mt-[15px] w-[355px]">
         {description}
       </p>
     </div>

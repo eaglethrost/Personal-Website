@@ -19,7 +19,7 @@ export default function Contact() {
               <h1 className="text-5xl lg:text-6xl text-center lg:text-left font-bold text-white">
                 Let's Talk!
               </h1>
-              <p className="text-xl lg:text-3xl text-center lg:text-left text-white leading-relaxed">
+              <p className="text-lg lg:text-2xl text-center lg:text-left text-white leading-relaxed">
                 Get in contact with me if you're interested to work together and
                 build the coolest products!
               </p>
