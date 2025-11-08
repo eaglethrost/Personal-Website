@@ -5,6 +5,7 @@ import Outdoor from "@/assets/outdoor.png";
 import PPIA from "@/assets/ppiawebsite.png";
 import Terminal from "@/assets/terminal.png";
 import Unilectives from "@/assets/unilectives.png";
+import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 import ProjectCard, { type ProjectCardProps } from "./Card";
@@ -86,68 +87,68 @@ export default function Projects() {
   };
 
   return (
-    <section
+    <Section
       id="projects"
-      className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundLight w-full to-backgroundDark pt-6 pb-10"
+      minHeight="screen"
+      tallScreenMinHeight="70vh"
+      gradientFrom="backgroundLight"
+      gradientTo="backgroundDark"
+      padding="pt-6 pb-10"
     >
-      <div className="w-content mx-auto">
-        <SectionHeader
-          title="My Projects"
-          description="Projects I've been involved in"
-          animation={headerAnimation}
-        />
-        {/* Carousel Container */}
-        <div ref={containerAnimation.ref}>
-          <div className="relative">
-            {/* Left Arrow */}
-            <button
-              type="button"
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              className={`absolute left-[-80px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(34,39,63,0.8)] hover:bg-[rgba(34,39,63,0.95)] rounded-full p-4 transition-all ${
-                !canScrollLeft ? "opacity-30 cursor-not-allowed" : "opacity-100"
-              }`}
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-8 h-8 text-white" />
-            </button>
+      <SectionHeader
+        title="My Projects"
+        description="Projects I've been involved in"
+        animation={headerAnimation}
+      />
+      {/* Carousel Container */}
+      <div ref={containerAnimation.ref}>
+        <div className="relative">
+          {/* Left Arrow */}
+          <button
+            type="button"
+            onClick={() => scroll("left")}
+            disabled={!canScrollLeft}
+            className={`absolute left-[-80px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(34,39,63,0.8)] hover:bg-[rgba(34,39,63,0.95)] rounded-full p-4 transition-all ${
+              !canScrollLeft ? "opacity-30 cursor-not-allowed" : "opacity-100"
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
 
-            {/* Scrollable Cards Container */}
-            <div
-              ref={scrollContainerRef}
-              onScroll={checkScroll}
-              className="flex gap-[48px] overflow-x-auto scrollbar-hide scroll-smooth"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {defaultProjects.map((project) => (
-                <ProjectCard
-                  key={project.title}
-                  image={project.image}
-                  title={project.title}
-                  technologies={project.technologies}
-                  description={project.description}
-                  link={project.link}
-                />
-              ))}
-            </div>
-
-            {/* Right Arrow */}
-            <button
-              type="button"
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              className={`absolute right-[-80px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(34,39,63,0.8)] hover:bg-[rgba(34,39,63,0.95)] rounded-full p-4 transition-all ${
-                !canScrollRight
-                  ? "opacity-30 cursor-not-allowed"
-                  : "opacity-100"
-              }`}
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-8 h-8 text-white" />
-            </button>
+          {/* Scrollable Cards Container */}
+          <div
+            ref={scrollContainerRef}
+            onScroll={checkScroll}
+            className="flex gap-[48px] overflow-x-auto scrollbar-hide scroll-smooth"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {defaultProjects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                image={project.image}
+                title={project.title}
+                technologies={project.technologies}
+                description={project.description}
+                link={project.link}
+              />
+            ))}
           </div>
+
+          {/* Right Arrow */}
+          <button
+            type="button"
+            onClick={() => scroll("right")}
+            disabled={!canScrollRight}
+            className={`absolute right-[-80px] top-1/2 -translate-y-1/2 z-10 bg-[rgba(34,39,63,0.8)] hover:bg-[rgba(34,39,63,0.95)] rounded-full p-4 transition-all ${
+              !canScrollRight ? "opacity-30 cursor-not-allowed" : "opacity-100"
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

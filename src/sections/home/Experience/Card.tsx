@@ -35,22 +35,16 @@ export default function ExperienceCard({
           height={100}
         />
         <div className="flex-1 min-w-0">
-          <p
-            className="font-bold text-3xl lg:text-4xl text-white text-center md:text-left"
-          >
+          <p className="font-bold text-3xl lg:text-4xl text-white text-center md:text-left">
             {title} @ {company}
           </p>
           {skills && (
-            <p
-              className="font-normal text-lg lg:text-xl text-white text-center md:text-left mt-0"
-            >
+            <p className="font-normal text-lg lg:text-xl text-white text-center md:text-left mt-0">
               {skills}
             </p>
           )}
         </div>
-        <p
-          className="font-medium text-lg lg:text-xl text-white text-center md:text-left shrink-0 self-center md:self-start"
-        >
+        <p className="font-medium text-lg lg:text-xl text-white text-center md:text-left shrink-0 self-center md:self-start">
           {dateRange}
         </p>
       </div>

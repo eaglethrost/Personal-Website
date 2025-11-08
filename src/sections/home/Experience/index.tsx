@@ -2,6 +2,7 @@ import AimlLogo from "@/assets/aiml.jpg";
 import AnderaLogo from "@/assets/andera.svg";
 import LyraLogo from "@/assets/lyra-logo.svg";
 import ReadmeLogo from "@/assets/readme.svg";
+import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
@@ -64,26 +65,28 @@ export default function Experience() {
   });
 
   return (
-    <section
+    <Section
+      className="pb-12"
       id="experience"
-      className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundLight w-full to-backgroundDark py-6"
+      minHeight="screen"
+      tallScreenMinHeight="70vh"
+      gradientFrom="backgroundLight"
+      gradientTo="backgroundDark"
     >
-      <div className="w-content mx-auto">
-        <SectionHeader
-          title="My Experience"
-          description="I've dabbled on a lot of areas to solve interesting problems & build products"
-          animation={headerAnimation}
-        />
+      <SectionHeader
+        title="My Experience"
+        description="I've dabbled on a lot of areas to solve interesting problems & build products"
+        animation={headerAnimation}
+      />
 
-        <div
-          ref={containerAnimation.ref}
-          className="w-full pt-4 flex flex-row flex-wrap justify-evenly text-center gap-8"
-        >
-          {currentExperiences.map((experience, index) => (
-            <ExperienceCard key={index} {...experience} />
-          ))}
-        </div>
+      <div
+        ref={containerAnimation.ref}
+        className="w-full pt-4 flex flex-row flex-wrap justify-evenly text-center gap-8"
+      >
+        {currentExperiences.map((experience, index) => (
+          <ExperienceCard key={index} {...experience} />
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -14,6 +14,7 @@ import ReactLogo from "@/assets/react.png";
 import RLogo from "@/assets/rstudio.png";
 import RustLogo from "@/assets/rust.png";
 import TsLogo from "@/assets/typescript.svg";
+import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { useFadeInAnimation } from "@/hooks/useFadeInAnimation";
 
@@ -42,33 +43,34 @@ export default function Skills() {
   });
 
   return (
-    <section
+    <Section
       id="skills"
-      className="min-h-screen tall-screen:min-h-[70vh] bg-gradient-to-b from-backgroundDark w-full to-backgroundLight py-6"
+      minHeight="screen"
+      tallScreenMinHeight="70vh"
+      gradientFrom="backgroundDark"
+      gradientTo="backgroundLight"
     >
-      <div className="w-content mx-auto">
-        <SectionHeader
-          title="My Skills"
-          description="Technologies I've worked with"
-          animation={headerAnimation}
-        />
-        <div
-          ref={containerAnimation.ref}
-          id="techs-container"
-          className="w-full my-5 p-8 grid grid-cols-2 md:grid-cols-4 justify-items-center items-center gap-x-2 gap-y-12 bg-white/10 rounded-3xl backdrop-blur-sm"
-        >
-          {logos.map((logo, index) => (
-            <div key={index} className="flex items-center justify-center">
-              <Image
-                src={logo}
-                alt={`Tech logo ${index + 1}`}
-                width={100}
-                height={100}
-              />
-            </div>
-          ))}
-        </div>
+      <SectionHeader
+        title="My Skills"
+        description="Technologies I've worked with"
+        animation={headerAnimation}
+      />
+      <div
+        ref={containerAnimation.ref}
+        id="techs-container"
+        className="w-full my-5 p-8 grid grid-cols-2 md:grid-cols-4 justify-items-center items-center gap-x-2 gap-y-12 bg-white/10 rounded-3xl backdrop-blur-sm"
+      >
+        {logos.map((logo, index) => (
+          <div key={index} className="flex items-center justify-center">
+            <Image
+              src={logo}
+              alt={`Tech logo ${index + 1}`}
+              width={100}
+              height={100}
+            />
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,15 +1,21 @@
 import Image from "next/image";
-import MyFace from "@/assets/my-face.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import MyFace from "@/assets/my-face.jpg";
+import Section from "@/components/ui/Section";
 
 export default function Contact() {
   return (
-    <section
+    <Section
       id="contact"
-      className="min-h-[65vh] bg-gradient-to-b from-backgroundDark to-backgroundLight flex flex-col"
-      data-name="Contact Page"
+      minHeight="60vh"
+      gradientFrom="backgroundDark"
+      gradientTo="backgroundLight"
+      padding="py-0"
+      flex
+      contentClassName="mt-auto flex flex-col"
+      dataName="Contact Page"
     >
       <div className="mt-auto flex flex-col">
         <div className="bg-backgroundMedium">
@@ -44,7 +50,9 @@ export default function Contact() {
                 <h2 className="text-4xl lg:text-5xl font-bold text-white">
                   Dimas Putra Anugerah
                 </h2>
-                <p className="text-xl lg:text-2xl text-white">Software Engineer</p>
+                <p className="text-xl lg:text-2xl text-white">
+                  Software Engineer
+                </p>
                 <div className="flex items-center gap-4 mt-4">
                   <a
                     href="mailto:dimazanugrah12@gmail.com"
@@ -85,6 +93,6 @@ export default function Contact() {
           </p>
         </footer>
       </div>
-    </section>
+    </Section>
   );
 }
